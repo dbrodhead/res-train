@@ -7,4 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Role.new({ :name => 'Admin'}).save
 User.new({ :email => 'admin@example.com', :password => 'password', :password_confirmation => 'password'}).save
-Assignment.new({ :admin_user_id => '1', :role_id => '1'}).save
+Assignment.new({ :user_id => '1', :role_id => '1'}).save
