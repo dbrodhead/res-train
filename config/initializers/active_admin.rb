@@ -208,5 +208,10 @@ ActiveAdmin.setup do |config|
 
   # To use CanCan authorization
   config.authorization_adapter = ActiveAdmin::CanCanAdapter
-
+  
+  module ActiveAdmin
+    class BaseController
+      with_role :admin
+    end
+  end
 end

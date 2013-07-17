@@ -1,0 +1,44 @@
+<%= form_for @tsession, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :training_day_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select(:training_day_id, TrainingDay.all, :id, :day) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :trade_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select(:trade_id, Trade.all, :id, :name) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :period_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select(:period_id, Period.all, :id, :name) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :instructor, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :instructor, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :activity, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :activity, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :location, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :location, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                tsessions_path, :class => 'btn' %>
+  </div>
+<% end %>

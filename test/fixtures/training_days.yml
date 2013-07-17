@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  day: 2013-07-05
+  weekday: MyString
+  details: MyText
+
+two:
+  day: 2013-07-05
+  weekday: MyString
+  details: MyText

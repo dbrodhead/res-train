@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130704165843) do
+ActiveRecord::Schema.define(:version => 20130705134226) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -33,9 +33,71 @@ ActiveRecord::Schema.define(:version => 20130704165843) do
     t.integer "role_id"
   end
 
+  create_table "crrs", :force => true do |t|
+    t.string   "code"
+    t.string   "name"
+    t.text     "link"
+    t.integer  "expiry"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "departments", :force => true do |t|
+    t.string   "name"
+    t.text     "details"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "periods", :force => true do |t|
+    t.string   "name"
+    t.integer  "number"
+    t.time     "stime"
+    t.time     "etime"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "roles", :force => true do |t|
     t.string   "name"
     t.text     "details"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "trades", :force => true do |t|
+    t.string   "name"
+    t.integer  "mosid"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "training_days", :force => true do |t|
+    t.date     "day"
+    t.string   "weekday"
+    t.text     "details"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "tsessions", :force => true do |t|
+    t.integer  "training_day_id"
+    t.integer  "trade_id"
+    t.integer  "period_id"
+    t.string   "instructor"
+    t.text     "activity"
+    t.string   "location"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "user_infos", :force => true do |t|
+    t.string   "fname"
+    t.string   "lname"
+    t.string   "rank"
+    t.integer  "user_id"
+    t.integer  "trade_id"
+    t.integer  "dept_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

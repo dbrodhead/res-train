@@ -1,0 +1,42 @@
+<%- model_class = TrainingDay -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:day) %>:</strong></dt>
+  <dd><%= @training_day.day %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:weekday) %>:</strong></dt>
+  <dd><%= @training_day.weekday %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:details) %>:</strong></dt>
+  <dd><%= @training_day.details %></dd>
+</dl>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:training_day_id) %></th>
+      <th><%= model_class.human_attribute_name(:trade_id) %></th>
+      <th><%= model_class.human_attribute_name(:period_id) %></th>
+      <th><%= model_class.human_attribute_name(:instructor) %></th>
+      <th><%= model_class.human_attribute_name(:activity) %></th>
+      <th><%= model_class.human_attribute_name(:location) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @training_day.tsessions.each do |i| %>
+      <tr>
+        <td><%= i.training_day.day %></td>
+        <td><%= i.trade.name %></td>
+        <td><%= i.period.name %></td>
+        <td><%= i.instructor %></td>
+        <td><%= i.activity %></td>
+        <td><%= i.location %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              training_days_path, :class => 'btn'  %>
+</div>

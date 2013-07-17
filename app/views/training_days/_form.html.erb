@@ -1,0 +1,26 @@
+<%= form_for @training_day, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :day, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :day, :class => 'date_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :weekday, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :weekday, options_for_select(%w[Monday Tuesday Wednesday Thursday Friday Saturday Sunday]) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :details, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :details, :class => 'text_area' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                training_days_path, :class => 'btn' %>
+  </div>
+<% end %>

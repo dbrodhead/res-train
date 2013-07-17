@@ -1,5 +1,26 @@
 ResTrain::Application.routes.draw do
   
+  resources :tsessions
+
+
+  resources :crrs
+
+
+  resources :training_days
+
+
+  resources :periods
+
+
+  resources :user_infos
+
+
+  resources :departments
+
+
+  resources :trades
+
+
   resources :assignments
 
 

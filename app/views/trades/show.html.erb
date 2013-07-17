@@ -1,0 +1,46 @@
+<%- model_class = Trade -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @trade.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:mosid) %>:</strong></dt>
+  <dd><%= @trade.mosid %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              trades_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_trade_path(@trade), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              trade_path(@trade),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:training_day_id) %></th>
+      <th><%= model_class.human_attribute_name(:period_id) %></th>
+      <th><%= model_class.human_attribute_name(:instructor) %></th>
+      <th><%= model_class.human_attribute_name(:activity) %></th>
+      <th><%= model_class.human_attribute_name(:location) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @trade.tsessions.each do |i| %>
+      <tr>
+        <td><%= i.training_day.day %></td>
+        <td><%= i.period.name %></td>
+        <td><%= i.instructor %></td>
+        <td><%= i.activity %></td>
+        <td><%= i.location %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -61,5 +61,8 @@ module ResTrain
     
     # Required for deployment to Heroku
     config.assets.initialize_on_precompile = false 
+    
+    # Sets scaffolding to no use Inherited Resources (installed by ActiveAdmin)
+    config.app_generators.scaffold_controller = :scaffold_controller
   end
 end

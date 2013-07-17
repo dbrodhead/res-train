@@ -10,7 +10,17 @@ class Ability
       can :manage, User, :id => user.id
       can :read, ActiveAdmin::Page, :name => "Dashboard"
       can :read, :all
-    end    
+    end 
+    if user.has_role? :dept_admin
+      can :update, Tsession
+      # can :update, Tsession do |tsession|
+        # current_user.user_info.trade_id == tsession.trade_id
+      # end
+    end
+    if user.has_role? :member
+      can :manage, User, :id => user.id
+      can :manage, UserInfo, :id => user.id
+    end
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
