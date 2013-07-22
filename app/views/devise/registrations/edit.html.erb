@@ -19,6 +19,21 @@
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
   <%= f.password_field :current_password %></div>
 
+  <div><%= f.label :fname %><br />
+  <%= f.text_field :fname %></div>
+
+  <div><%= f.label :lname %><br />
+  <%= f.text_field :lname %></div>
+
+  <div><%= f.label :rank %><br />
+  <%= f.text_field :rank %></div>
+
+  <div><%= f.label :trade %><br />
+  <%= f.collection_select(:trade_id, Trade.all, :id, :name) %></div>
+
+  <div><%= f.label :department %><br />
+  <%= f.collection_select(:department_id, Department.all, :id, :name) %></div>
+
   <div><%= f.submit "Update" %></div>
 <% end %>
 

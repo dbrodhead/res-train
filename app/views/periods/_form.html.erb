@@ -23,6 +23,12 @@
       <%= f.time_select :etime, :class => 'time_select' %>
     </div>
   </div>
+  <div class="control-group">
+    <%= f.label :pgroup_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select(:pgroup_id, Pgroup.all, :id, :name) %>
+    </div>
+  </div>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>

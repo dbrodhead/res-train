@@ -3,4 +3,5 @@ class Trade < ActiveRecord::Base
   
   has_many :tsessions, :dependent => :destroy
   has_many :training_days, :through => :tsessions
+  has_many :users
 end

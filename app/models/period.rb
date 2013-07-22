@@ -3,4 +3,5 @@ class Period < ActiveRecord::Base
   default_scope order('name ASC')
   
   has_many :tsessions, :dependent => :destroy
+  belongs_to :pgroup
 end

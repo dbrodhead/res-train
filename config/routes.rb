@@ -1,5 +1,8 @@
 ResTrain::Application.routes.draw do
   
+  resources :pgroups
+
+
   resources :tsessions
 
 
@@ -10,9 +13,6 @@ ResTrain::Application.routes.draw do
 
 
   resources :periods
-
-
-  resources :user_infos
 
 
   resources :departments

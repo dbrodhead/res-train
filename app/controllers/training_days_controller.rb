@@ -17,9 +17,7 @@ class TrainingDaysController < InheritedResources::Base
   def create
     @training_day = TrainingDay.new(params[:training_day])
     @trade = Trade.all
-    # if @training_day.weekday => "Saturday"
     @period = Period.find(:all, :conditions => ["name like ?","%Saturday%"])
-    # elseif 
     @trade.each do |trade|
       @period.each do |period|
         @training_day.tsessions.build(:trade_id => trade.id, :period_id => period.id)
