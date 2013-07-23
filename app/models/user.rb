@@ -6,9 +6,19 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :role_ids, :as => :admin
-  # attr_accessible :title, :body
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :fname, :lname, :rank, :trade_id, :department_id
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :fname, :lname, :rank, :trade_id, :department_id, :role_ids, :as => :admin
+
+  # Require fields
+  validates :email,   
+            :presence => true,   
+            :uniqueness => true,   
+            :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i } 
+  validates :fname, presence: true
+  validates :lname, presence: true
+  validates :rank, presence: true
+  validates :trade_id, presence: true
+  validates :department_id, presence: true
   
   has_many :assignments
   has_many :roles, :through => :assignments

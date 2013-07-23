@@ -5,24 +5,22 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:pgroup_id) %></th>
       <th><%= model_class.human_attribute_name(:number) %></th>
       <th><%= model_class.human_attribute_name(:stime) %></th>
       <th><%= model_class.human_attribute_name(:etime) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @periods.each do |period| %>
       <tr>
-        <td><%= link_to period.id, period_path(period) %></td>
-        <td><%= period.name %></td>
+        <td><%= link_to period.name, period_path(period) %></td>
+        <td><%= period.pgroup.name %></td>
         <td><%= period.number %></td>
-        <td><%= period.stime %></td>
-        <td><%= period.etime %></td>
-        <td><%=l period.created_at %></td>
+        <td><%= period.stime.strftime('%H:%M') %></td>
+        <td><%= period.etime.strftime('%H:%M') %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_period_path(period), :class => 'btn btn-mini' %>

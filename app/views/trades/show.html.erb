@@ -10,18 +10,6 @@
   <dd><%= @trade.mosid %></dd>
 </dl>
 
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              trades_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_trade_path(@trade), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              trade_path(@trade),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
-</div>
-
 <table class="table table-striped">
   <thead>
     <tr>
@@ -44,3 +32,7 @@
     <% end %>
   </tbody>
 </table>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              trades_path, :class => 'btn'  %>
+</div>

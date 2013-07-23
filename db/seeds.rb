@@ -6,5 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Role.new({ :name => 'Admin'}).save
-User.new({ :email => 'admin@example.com', :password => 'password', :password_confirmation => 'password'}).save
-Assignment.new({ :user_id => '1', :role_id => '1'}).save
+#roles = ["Admin", "DeptAdmin", "Member"]
+#roles.each{|d| Role.where(:name => d).find_or_create}
+#Role.find_or_create([{ :name => 'Admin' }, { :name => 'DeptAdmin' }, { :name => 'Member' }], :without_protection => true)
+User.find_or_create({ :email => 'admin@example.com', :password => 'password', :password_confirmation => 'password'})
+Assignment.find_or_create({ :user_id => '1', :role_id => '1'})

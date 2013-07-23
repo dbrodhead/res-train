@@ -1,4 +1,5 @@
 class PgroupsController < ApplicationController
+  load_and_authorize_resource
   # GET /pgroups
   # GET /pgroups.json
   def index
