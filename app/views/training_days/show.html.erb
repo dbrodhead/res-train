@@ -21,6 +21,7 @@
       <th><%= model_class.human_attribute_name(:instructor) %></th>
       <th><%= model_class.human_attribute_name(:activity) %></th>
       <th><%= model_class.human_attribute_name(:location) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
@@ -32,6 +33,19 @@
         <td><%= i.instructor %></td>
         <td><%= i.activity %></td>
         <td><%= i.location %></td>
+        <td>
+          <% if can? :update, i %>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_tsession_path(i), :class => 'btn btn-mini' %>
+          <% end %>
+          <% if can? :destroy, i %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      tsession_path(i),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

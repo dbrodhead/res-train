@@ -14,15 +14,14 @@ class User < ActiveRecord::Base
             :presence => true,   
             :uniqueness => true,   
             :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i } 
-  validates :fname, presence: true
-  validates :lname, presence: true
-  validates :rank, presence: true
-  validates :trade_id, presence: true
-  validates :department_id, presence: true
+  # validates :fname, presence: true
+  # validates :lname, presence: true
+  # validates :rank, presence: true
+  # validates :trade_id, presence: true
+  # validates :department_id, presence: true
   
   has_many :assignments
   has_many :roles, :through => :assignments
-  has_one :user
   belongs_to :department
   belongs_to :trade
   

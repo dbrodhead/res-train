@@ -34,6 +34,8 @@ ResTrain::Application.routes.draw do
   match '/about', to: 'static_pages#about'
   match '/home', to: 'static_pages#home'
   match '/contact', to: 'static_pages#contact'
+  
+  get 'training_days/period'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
