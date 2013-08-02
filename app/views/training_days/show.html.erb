@@ -15,9 +15,10 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:training_day_id) %></th>
       <th><%= model_class.human_attribute_name(:trade_id) %></th>
       <th><%= model_class.human_attribute_name(:period_id) %></th>
+      <th>Start Time</th>
+      <th>End Time</th>
       <th><%= model_class.human_attribute_name(:instructor) %></th>
       <th><%= model_class.human_attribute_name(:activity) %></th>
       <th><%= model_class.human_attribute_name(:location) %></th>
@@ -27,9 +28,10 @@
   <tbody>
     <% @training_day.tsessions.each do |i| %>
       <tr>
-        <td><%= i.training_day.day %></td>
         <td><%= i.trade.name %></td>
         <td><%= i.period.name %></td>
+        <td><%= i.period.stime.strftime('%H:%M') %></td>
+        <td><%= i.period.etime.strftime('%H:%M') %></td>
         <td><%= i.instructor %></td>
         <td><%= i.activity %></td>
         <td><%= i.location %></td>

@@ -32,59 +32,31 @@
                 <li>
                   <%= link_to "Help", help_path %>
 								</li>
-								<li class="dropdown">
-									 <a data-toggle="dropdown" class="dropdown-toggle" href="#">Dropdown<strong class="caret"></strong></a>
-									<ul class="dropdown-menu">
-										<li>
-											<a href="#">Action</a>
-										</li>
-										<li>
-											<a href="#">Another action</a>
-										</li>
-										<li>
-											<a href="#">Something else here</a>
-										</li>
-										<li class="divider">
-										</li>
-										<li class="nav-header">
-											Nav header
-										</li>
-										<li>
-											<a href="#">Separated link</a>
-										</li>
-										<li>
-											<a href="#">Separated link</a>
-										</li>
-									</ul>
-								</li>
 							</ul>
 							<ul class="nav pull-right">
                 <% if can? :manage, :all %>
 								<li>                  
-                  <%= link_to "Admin", admin_dashboard_path %>						
+                  <%= link_to "Active Admin", admin_dashboard_path %>						
 								</li>
                 <% end %>
-								<li class="divider-vertical">
-								</li>
+                <% if can? :manage, :all %>
 								<li class="dropdown">
-									 <a data-toggle="dropdown" class="dropdown-toggle" href="#">Dropdown<strong class="caret"></strong></a>
+									 <a data-toggle="dropdown" class="dropdown-toggle" href="#">Admin<strong class="caret"></strong></a>
 									<ul class="dropdown-menu">
 										<li>
-											<a href="#">Action</a>
+											<%= link_to 'Periods', periods_path %>
 										</li>
 										<li>
-											<a href="#">Another action</a>
-										</li>
-										<li>
-											<a href="#">Something else here</a>
+											<%= link_to 'Period Groups', pgroups_path %>
 										</li>
 										<li class="divider">
 										</li>
 										<li>
-											<a href="#">Separated link</a>
+											Users
 										</li>
 									</ul>
 								</li>
+                <% end %>
 							</ul>
 						</div>
 						
@@ -99,7 +71,7 @@
 		<div class="span2">
 			<ul class="nav nav-list">
 				<li class="nav-header">
-					List header
+					Unit
 				</li>
 				<li>
 					<%= link_to 'Trades', trades_path %>
@@ -107,23 +79,18 @@
         <li>
 					<%= link_to 'Departments', departments_path %>
 				</li>
-        <li>
-					<%= link_to 'CRRs', crrs_path %>
-				</li>
+
 				<li class="nav-header">
-					Another list header
+					Training
 				</li>
 				<li>
-					<%= link_to 'Periods', periods_path %>
-				</li>
-        <li>
-					<%= link_to 'Period Groups', pgroups_path %>
-				</li>
-				<li>
-					<%= link_to 'Training Days', training_days_path %>
+					<%= link_to 'Training Calendar', training_days_path %>
 				</li>
         <li>
 					<%= link_to 'Training Sessions', tsessions_path %>
+				</li>
+        <li>
+					<%= link_to 'CRRs', crrs_path %>
 				</li>
 			</ul>
       <p>
