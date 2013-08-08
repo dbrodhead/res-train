@@ -1,5 +1,5 @@
-== CARLETON Training
-This site is being designed to handle the training schedule for a Canadian Forces Naval Reserve Division(NRD). HMCS CARLETON (Ottawa NRD) has ~200 sailors spanning 10 different trades(professions). Each trade follows it's own training schedule maintained and updated by their departmental training coordinator. All of the trades are supervised by the Training Department. 
+== NRD Training
+This site is being designed to handle the training schedule for a Naval Reserve Division(NRD). The unit has ~200 sailors spanning 10 different trades(professions). Each trade follows it's own training schedule maintained and updated by their departmental training coordinator. All of the trades are supervised by the Training Department. 
 
 This website allows for:
 - Departmental training coordinators to update and submit their training schedules to the Training Department -> Authorization limits them to only being able to edit their own trade.
