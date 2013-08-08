@@ -26,6 +26,7 @@ gem 'jquery-rails', '2.3.0'
 gem 'devise'
 gem 'activeadmin'
 gem 'cancan'
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

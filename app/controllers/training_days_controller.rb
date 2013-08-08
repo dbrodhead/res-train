@@ -1,6 +1,17 @@
 class TrainingDaysController < InheritedResources::Base
   load_and_authorize_resource
 
+  # GET /training_days
+  # GET /training_days.json
+  def index
+    @training_days = TrainingDay.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @training_days }
+    end
+  end
+  
   # GET /training_days/1
   # GET /training_days/1.json  
   def show
