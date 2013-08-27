@@ -18,15 +18,16 @@ group :assets do
   gem 'therubyracer'
   gem 'less-rails'
 
-  gem 'uglifier', '>= 1.0.3'
   gem 'twitter-bootstrap-rails'
+  gem 'uglifier', '>= 1.0.3'
+  gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 end
 
 gem 'jquery-rails', '2.3.0'
+gem 'jquery-ui-rails'
 gem 'devise'
 gem 'activeadmin'
 gem 'cancan'
-gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

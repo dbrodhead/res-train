@@ -4,4 +4,5 @@ class Period < ActiveRecord::Base
   
   has_many :tsessions, :dependent => :destroy
   belongs_to :pgroup
+  has_many :training_days, :through => :tsessions
 end

@@ -16,6 +16,7 @@ class TrainingDaysController < InheritedResources::Base
   # GET /training_days/1.json  
   def show
     @training_day = TrainingDay.includes(:tsessions).find(params[:id])
+    @training_day.tsessions.sort!{|a,b| a.period.stime <=> b.period.stime }
 
     respond_to do |format|
       format.html # show.html.erb
