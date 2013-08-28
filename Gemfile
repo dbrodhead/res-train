@@ -21,10 +21,10 @@ group :assets do
   gem 'twitter-bootstrap-rails'
   gem 'uglifier', '>= 1.0.3'
   gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+  gem 'jquery-rails', '2.3.0'
+  gem 'jquery-ui-rails'
 end
 
-gem 'jquery-rails', '2.3.0'
-gem 'jquery-ui-rails'
 gem 'devise'
 gem 'activeadmin'
 gem 'cancan'
