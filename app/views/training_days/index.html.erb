@@ -8,7 +8,6 @@
       <th><%= model_class.human_attribute_name(:day) %></th>
       <th><%= model_class.human_attribute_name(:weekday) %></th>
       <th><%= model_class.human_attribute_name(:details) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -18,7 +17,6 @@
         <td><%= link_to training_day.day, training_day_path(training_day) %></td>
         <td><%= training_day.weekday %></td>
         <td><%= training_day.details %></td>
-        <td><%=l training_day.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_training_day_path(training_day), :class => 'btn btn-mini' %>

@@ -5,11 +5,11 @@
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:training_day_id) %>:</strong></dt>
-  <dd><%= @tsession.training_day_id %></dd>
+  <dd><%= @tsession.training_day.day %></dd>
   <dt><strong><%= model_class.human_attribute_name(:trade_id) %>:</strong></dt>
-  <dd><%= @tsession.trade_id %></dd>
+  <dd><%= @tsession.trade.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:period_id) %>:</strong></dt>
-  <dd><%= @tsession.period_id %></dd>
+  <dd><%= @tsession.period.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:instructor) %>:</strong></dt>
   <dd><%= @tsession.instructor %></dd>
   <dt><strong><%= model_class.human_attribute_name(:activity) %>:</strong></dt>
