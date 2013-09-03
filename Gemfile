@@ -17,16 +17,16 @@ group :assets do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer'
   gem 'less-rails'
-
   gem 'twitter-bootstrap-rails'
   gem 'uglifier', '>= 1.0.3'
-  gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+  gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails' 
   gem 'jquery-rails', '2.3.0'
-  gem 'jquery-ui-rails'
+  gem 'jquery-ui-rails'  
 end
 
 gem 'devise'
 gem 'activeadmin'
+gem "meta_search",    '>= 1.1.0.pre'
 gem 'cancan'
 
 # To use ActiveModel has_secure_password

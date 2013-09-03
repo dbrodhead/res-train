@@ -5,6 +5,7 @@ class TradesController < InheritedResources::Base
   # GET /trades/1.json
   def show
     @trade = Trade.includes(:tsessions).find(params[:id])
+    session[:return_to] = request.fullpath
 
     respond_to do |format|
       format.html # show.html.erb

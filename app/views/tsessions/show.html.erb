@@ -20,7 +20,7 @@
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
-              tsessions_path, :class => 'btn'  %>
+              session.delete(:return_to), :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_tsession_path(@tsession), :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

@@ -17,6 +17,7 @@ class TrainingDaysController < InheritedResources::Base
   def show
     @training_day = TrainingDay.includes(:tsessions).find(params[:id])
     @training_day.tsessions.sort!{|a,b| a.period.stime <=> b.period.stime }
+    session[:return_to] = request.fullpath
 
     respond_to do |format|
       format.html # show.html.erb
@@ -29,13 +30,13 @@ class TrainingDaysController < InheritedResources::Base
   def create
     @training_day = TrainingDay.new(params[:training_day])
     # This code creates new periods for each trade depending on the Day. Need to move to own method in Tsession.
-    @trade = Trade.all
-    @period = Period.find(:all, :conditions => { :pgroups => { :name => "Saturday Day"}}, :joins => :pgroup)
-    @trade.each do |trade|
-      @period.each do |period|
-        @training_day.tsessions.build(:trade_id => trade.id, :period_id => period.id)
-      end
-    end
+    # @trade = Trade.all
+    # @period = Period.find(:all, :conditions => { :pgroups => { :name => "Saturday Day"}}, :joins => :pgroup)
+    # @trade.each do |trade|
+      # @period.each do |period|
+        # @training_day.tsessions.build(:trade_id => trade.id, :period_id => period.id)
+      # end
+    # end
 
     respond_to do |format|
       if @training_day.save

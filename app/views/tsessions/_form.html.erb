@@ -18,6 +18,12 @@
     </div>
   </div>
   <div class="control-group">
+    <%= f.label "Create Multiple", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :multi %>
+    </div>
+  </div>
+  <div class="control-group">
     <%= f.label :instructor, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :instructor, :class => 'text_field' %>
