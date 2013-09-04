@@ -17,6 +17,7 @@ class TrainingDaysController < InheritedResources::Base
   def show
     @training_day = TrainingDay.includes(:tsessions).find(params[:id])
     @training_day.tsessions.sort!{|a,b| a.period.stime <=> b.period.stime }
+    session[:return_to] = request.fullpath
 
     respond_to do |format|
       format.html # show.html.erb

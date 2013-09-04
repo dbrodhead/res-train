@@ -93,7 +93,7 @@
 					<%= link_to 'CRRs', crrs_path %>
 				</li>
 			</ul>
-      <p>
+      <div class="span12">
         <div class="well">
         <% if user_signed_in? %>
            <button class="btn btn-primary" type="button"><%= link_to('Logout', destroy_user_session_path, :method=>'delete') %></button>
@@ -106,7 +106,7 @@
            <button class="btn" type="button"><%= link_to('Sign up', new_user_registration_path) %></button>
         <% end %>
         </div>          
-       </p>
+       </div>
 		</div>
 		<div class="span10">
       <%= render 'layouts/messages' %>
