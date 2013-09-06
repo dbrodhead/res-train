@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ResTraining</title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+  <body>
+    <!-- Main Container -->
+    <section>
+    <div class="container login">
+        <div class="row ">
+            <div class="center span4 well">
+              <h1 class="text-center text-info">CARLETON Training</h1>
+              <%= yield %>
+              <%= render 'layouts/messages' %>
+            </div>
+        </div>
+    </div>
+    <p class="text-center muted ">&copy; Copyright 2013 - D@nBDesign</p>
+    </section>
+    <!-- Main Container Ends -->
+  </body>
+</html>

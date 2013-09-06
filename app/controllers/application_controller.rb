@@ -7,4 +7,16 @@ class ApplicationController < ActionController::Base
     flash[:error] = "Access denied!"
     redirect_to root_url
   end
+  
+  layout :layout_by_resource
+
+  protected
+
+  def layout_by_resource
+    if devise_controller?
+      "devise"
+    else
+      "application"
+    end
+  end
 end
