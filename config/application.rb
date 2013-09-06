@@ -65,5 +65,8 @@ module ResTrain
     
     # Sets scaffolding to no use Inherited Resources (installed by ActiveAdmin)
     config.app_generators.scaffold_controller = :scaffold_controller
+    
+    # For ActiveAdmin deployment to Heroku
+    config.assets.precompile += %w( active_admin.css active_admin.js active_admin/print.css )
   end
 end

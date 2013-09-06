@@ -10,14 +10,15 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require twitter/bootstrap
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
 //= require dataTables/extras/TableTools
 //= require dataTables/extras/ZeroClipboard
 //= require_tree .
+
 
 /* Default class modification */
 $.extend( $.fn.dataTableExt.oStdClasses, {
