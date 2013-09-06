@@ -27,7 +27,7 @@
   </thead>
   <tbody>
     <% @training_day.tsessions.each do |i| %>
-      <tr>
+      <tr class="<%= category_table_row_class(i.trade.name) %>">
         <td><%= i.trade.name %></td>
         <td><%= i.period.name %></td>
         <td><%= i.period.stime.strftime('%H:%M') %></td>

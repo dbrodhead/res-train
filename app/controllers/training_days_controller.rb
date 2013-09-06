@@ -16,6 +16,8 @@ class TrainingDaysController < InheritedResources::Base
   # GET /training_days/1.json  
   def show
     @training_day = TrainingDay.includes(:tsessions).find(params[:id])
+    # Sort by Trade then by period start time
+    @training_day.tsessions.sort!{|a,b| a.trade.name <=> b.trade.name }
     @training_day.tsessions.sort!{|a,b| a.period.stime <=> b.period.stime }
     session[:return_to] = request.fullpath
 
