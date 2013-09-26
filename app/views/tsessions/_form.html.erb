@@ -17,12 +17,14 @@
       <%= f.collection_select(:period_id, Period.all, :id, :name) %>
     </div>
   </div>
+  <% if can? :create, @tsession %>
   <div class="control-group">
     <%= f.label "Create Multiple", :class => 'control-label' %>
     <div class="controls">
       <%= f.check_box :multi %>
     </div>
   </div>
+  <% end %>
   <div class="control-group">
     <%= f.label :instructor, :class => 'control-label' %>
     <div class="controls">
