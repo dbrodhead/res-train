@@ -29,5 +29,14 @@ ActiveAdmin.register_page "Dashboard" do
     #     end
     #   end
     # end
+    section "Recent Updates" do
+      table_for Tsession.order("updated_at desc").limit(10) do
+        column :name do |tsession|
+          link_to Tsession.name, [:admin, tsession]
+        end
+        column :updated_at
+      end
+      strong { link_to "View All Products", tsessions_path }
+    end
   end # content
 end

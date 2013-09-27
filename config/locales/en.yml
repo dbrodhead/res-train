@@ -3,3 +3,9 @@
 
 en:
   hello: "Hello world"
+  tsessions:
+    index:
+      title: "Training Sessions"
+  crrs:
+    index:
+      title: "Combat Readiness Requirements"

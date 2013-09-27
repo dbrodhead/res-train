@@ -7,8 +7,8 @@ ActiveAdmin.register User do
     column :current_sign_in_at
     column :last_sign_in_at
     column :sign_in_count
-    column :fname
-    column :lname
+    column 'First Name', :fname
+    column 'Last Name', :lname
     column :rank
     column :department
     column :trade
@@ -23,8 +23,8 @@ ActiveAdmin.register User do
       f.input :password               
       f.input :password_confirmation 
       f.input :roles
-      f.input :fname
-      f.input :lname
+      f.input :fname, label: 'First Name'
+      f.input :lname, label: 'Last Name'
       f.input :rank
       f.input :department
       f.input :trade
