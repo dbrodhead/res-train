@@ -4,4 +4,6 @@ class Trade < ActiveRecord::Base
   has_many :tsessions, :dependent => :destroy
   has_many :training_days, :through => :tsessions
   has_many :users
+  
+  default_scope :order => 'name asc'
 end

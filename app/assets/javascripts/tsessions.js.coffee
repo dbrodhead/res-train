@@ -7,9 +7,5 @@ jQuery ->
     bRetrieve:true
     bDestroy: true
     oTableTools:
-      sSwfPath: "http://shielded-crag-6235.herokuapp.com/public/assets/dataTables/extras/swf/copy_csv_xls_pdf.swf"   
-      aButtons: ["print", {
-         "sExtends": "collection",
-         "sButtonText": "Save <span class=\"caret\" />",
-         "aButtons": ["csv", "xls", "pdf"]
-        }]
+      sSwfPath: "http://shielded-crag-6235.herokuapp.com/assets/dataTables/extras/swf/copy_csv_xls_pdf.swf"   
+      aButtons: ["print", "csv", "xls", "pdf"]
