@@ -36,6 +36,12 @@ ResTrain::Application.routes.draw do
   match '/contact', to: 'static_pages#contact'
   
   get 'training_days/period'
+  
+  # Devise authentication on all pages
+  authenticated :user do
+    root :to => 'static_pages#home', :as => :authenticated_root
+  end
+  root :to => redirect('/users/sign_in')
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

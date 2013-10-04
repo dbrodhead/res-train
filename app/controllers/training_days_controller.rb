@@ -24,10 +24,10 @@ class TrainingDaysController < InheritedResources::Base
       format.html # show.html.erb
       format.json { render json: @training_day }
       format.pdf do
-        pdf = TrainingDayPdf.new(@training_day, view_context)
-        send_data pdf.render, filename: 
-        "TrainingDay_#{@training_day.created_at.strftime("%d/%m/%Y")}.pdf",
-        type: "application/pdf"
+        pdf = TrainingDayPdf.new(@training_day)
+        send_data pdf.render, filename: "training_day_#{@training_day.id}.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
       end
     end
   end
