@@ -3,9 +3,8 @@ class TrainingDayPdf < Prawn::Document
   def initialize(training_day)
     super()
     @training_day = training_day
-    text 'Hello World'
-    text "Day \##{@training_day.day}"
-    text "Weekday \##{@training_day.weekday}"
+    text "Day #{@training_day.day}"
+    text "Weekday #{@training_day.weekday}"
     move_down 20
     table(tsession_table_data, :cell_style => {:background_color => "FFFFCC"}) do   
       row(0).font_style = :bold
