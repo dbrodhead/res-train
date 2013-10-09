@@ -87,21 +87,20 @@
         <li>
 					<%= link_to 'CRRs', crrs_path %>
 				</li>
+        <li class="nav-header">
+					Account
+				</li>
+        <% if user_signed_in? %>
+          <li><%= link_to('Edit account', edit_user_registration_path) %></li>
+        <% else %>
+          <li><%= link_to('Sign up', new_user_registration_path) %></li>
+        <% end %>
+        <% if user_signed_in? %>
+        <li><strong><%= link_to('Logout', destroy_user_session_path, :method=>'delete') %></strong></li>
+        <% else %>
+          <li><%= link_to('Login', new_user_session_path) %></li>
+        <% end %>       
 			</ul>
-      <div class="span12">
-        <div class="well">
-        <% if user_signed_in? %>
-           <button class="btn btn-primary" type="button"><%= link_to('Logout', destroy_user_session_path, :method=>'delete') %></button>
-        <% else %>
-           <button class="btn btn-primary" type="button"><%= link_to('Login', new_user_session_path) %></button>
-        <% end %>
-        <% if user_signed_in? %>
-          <button class="btn" type="button"><%= link_to('Edit account', edit_user_registration_path) %></button>
-        <% else %>
-           <button class="btn" type="button"><%= link_to('Sign up', new_user_registration_path) %></button>
-        <% end %>
-        </div>          
-       </div>
 		</div>
 		<div class="span10">
       <%= render 'layouts/messages' %>
