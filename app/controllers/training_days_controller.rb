@@ -4,7 +4,9 @@ class TrainingDaysController < InheritedResources::Base
   # GET /training_days
   # GET /training_days.json
   def index
-    @training_days = TrainingDay.all
+    # Only display upcoming training days
+    @training_days = TrainingDay.where("day >= ?", Date.today)
+    # @training_days = TrainingDay.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -37,13 +39,13 @@ class TrainingDaysController < InheritedResources::Base
   def create
     @training_day = TrainingDay.new(params[:training_day])
     # This code creates new periods for each trade depending on the Day. Need to move to own method in Tsession.
-    @trade = Trade.all
-    @period = Period.find(:all, :conditions => { :pgroups => { :name => "Saturday Day"}}, :joins => :pgroup)
-    @trade.each do |trade|
-      @period.each do |period|
-        @training_day.tsessions.build(:trade_id => trade.id, :period_id => period.id)
-      end
-    end
+    # @trade = Trade.all
+    # @period = Period.find(:all, :conditions => { :pgroups => { :name => "Saturday Day"}}, :joins => :pgroup)
+    # @trade.each do |trade|
+      # @period.each do |period|
+        # @training_day.tsessions.build(:trade_id => trade.id, :period_id => period.id)
+      # end
+    # end
 
     respond_to do |format|
       if @training_day.save
