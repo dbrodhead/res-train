@@ -1,4 +1,5 @@
 <%= form_for @tsession, :html => { :class => 'form-horizontal' } do |f| %>
+  <% if can? :create, @tsession %>
   <div class="control-group">
     <%= f.label :training_day_id, :class => 'control-label' %>
     <div class="controls">
@@ -17,7 +18,6 @@
       <%= f.collection_select(:period_id, Period.all, :id, :name) %>
     </div>
   </div>
-  <% if can? :create, @tsession %>
   <div class="control-group">
     <%= f.label "Create Multiple", :class => 'control-label' %>
     <div class="controls">
@@ -47,6 +47,6 @@
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                tsessions_path, :class => 'btn' %>
+                session.delete(:return_to), :class => 'btn' %>
   </div>
 <% end %>

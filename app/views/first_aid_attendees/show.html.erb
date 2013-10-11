@@ -1,0 +1,35 @@
+<%- model_class = FirstAidAttendee -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:first_aid_course_id) %>:</strong></dt>
+  <dd><%= @first_aid_attendee.first_aid_course_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:lname) %>:</strong></dt>
+  <dd><%= @first_aid_attendee.lname %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:fname) %>:</strong></dt>
+  <dd><%= @first_aid_attendee.fname %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:lastthree) %>:</strong></dt>
+  <dd><%= @first_aid_attendee.lastthree %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @first_aid_attendee.email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:department_id) %>:</strong></dt>
+  <dd><%= @first_aid_attendee.department_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd><%= @first_aid_attendee.user_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:created_by) %>:</strong></dt>
+  <dd><%= @first_aid_attendee.created_by %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              session.delete(:return_to), :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_first_aid_attendee_path(@first_aid_attendee), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              first_aid_attendee_path(@first_aid_attendee),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

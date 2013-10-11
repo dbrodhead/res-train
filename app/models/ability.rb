@@ -11,6 +11,11 @@ class Ability
       can :manage, User, :id => user.id
       can :read, :all
     end
+    if user.has_role? :first_aid_coordinator
+      can :manage, [FirstAidCourse, FirstAidAttendee]    
+      can :manage, User, :id => user.id
+      can :read, :all
+    end
     if user.has_role? :member
       can :manage, User, :id => user.id
       can :read, :all

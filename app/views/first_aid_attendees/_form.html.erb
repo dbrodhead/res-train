@@ -1,0 +1,50 @@
+<%= form_for @first_aid_attendee, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :first_aid_course_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select(:first_aid_course_id, FirstAidCourse.all, :id, :iutonumber) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :lname, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :lname, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :fname, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :fname, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :lastthree, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :lastthree, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :department_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select(:department_id, Department.all, :id, :name) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :user_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select(:user_id, User.all, :id, :full_name_and_rank, {include_blank: true}) %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                session.delete(:return_to), :class => 'btn' %>
+  </div>
+<% end %>

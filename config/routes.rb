@@ -1,5 +1,14 @@
 ResTrain::Application.routes.draw do
   
+  resources :first_aid_attendees
+
+
+  resources :positions
+
+
+  resources :first_aid_courses
+
+
   resources :pgroups
 
 

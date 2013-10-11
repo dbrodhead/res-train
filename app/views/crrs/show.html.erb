@@ -17,11 +17,15 @@
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               crrs_path, :class => 'btn'  %>
+  <% if can? :update, Crr %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_crr_path(@crr), :class => 'btn' %>
+  <% end %>
+  <% if can? :destroy, Crr %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               crr_path(@crr),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
+  <% end %>
 </div>

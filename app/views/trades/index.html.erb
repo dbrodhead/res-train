@@ -16,16 +16,16 @@
         <td><%= link_to trade.name, trade_path(trade) %></td>
         <td><%= trade.mosid %></td>
         <td>
-          <% if can? :update, @trade %>
+          <% if can? :update, trade %>
             <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_trade_path(trade), :class => 'btn btn-mini' %>
           <% end %>
-        </td
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<% if can? :create, @trade %>
+<% if can? :create, Trade %>
   <%= link_to t('.new', :default => t("helpers.links.new")),
             new_trade_path,
             :class => 'btn btn-primary' %>

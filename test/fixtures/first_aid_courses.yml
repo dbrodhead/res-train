@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  sdate: 2013-10-10
+  edate: 2013-10-10
+  instructor: MyString
+  iutonumber: MyString
+  iutolink: MyString
+  spots: 1
+  language: MyString
+
+two:
+  sdate: 2013-10-10
+  edate: 2013-10-10
+  instructor: MyString
+  iutonumber: MyString
+  iutolink: MyString
+  spots: 1
+  language: MyString

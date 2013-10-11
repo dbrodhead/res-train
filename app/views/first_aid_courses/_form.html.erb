@@ -1,0 +1,50 @@
+<%= form_for @first_aid_course, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :sdate, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :sdate, :class => 'date_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :edate, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :edate, :class => 'date_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :instructor, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :instructor, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :iutonumber, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :iutonumber, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :iutolink, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :iutolink, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :spots, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :spots, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :language, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :language, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                first_aid_courses_path, :class => 'btn' %>
+  </div>
+<% end %>

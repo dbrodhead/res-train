@@ -24,6 +24,7 @@ class TsessionsController < InheritedResources::Base
   
   def update
     @tsession = Tsession.find(params[:id])
+    session[:return_to] = request.fullpath
 
     respond_to do |format|
       if @tsession.update_attributes(params[:tsession])

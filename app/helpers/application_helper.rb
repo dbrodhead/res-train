@@ -3,7 +3,7 @@ module ApplicationHelper
     link_to(content, object) if can?(:read, object)
   end
 
-  def edit_link(object, content = "Edit")
+  def edit_link(object, content = t('.edit', :default => t("helpers.links.edit")))
     link_to(content, [:edit, object]) if can?(:update, object)
   end
 

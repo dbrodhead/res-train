@@ -4,7 +4,7 @@ class TradesController < InheritedResources::Base
   # GET /trades/1
   # GET /trades/1.json
   def show
-    @trade = Trade.includes(:tsessions).find(params[:id])
+    @trade = Trade.includes(tsessions: [:period, :training_day]).order("training_days.day ASC, periods.stime ASC").find(params[:id])
     session[:return_to] = request.fullpath
 
     respond_to do |format|

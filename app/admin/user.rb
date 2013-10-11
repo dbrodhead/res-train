@@ -12,6 +12,7 @@ ActiveAdmin.register User do
     column :rank
     column :department
     column :trade
+    column :position
    default_actions                   
   end                                 
 
@@ -28,6 +29,7 @@ ActiveAdmin.register User do
       f.input :rank
       f.input :department
       f.input :trade
+      f.input :position
     end                               
     f.actions                         
   end  
